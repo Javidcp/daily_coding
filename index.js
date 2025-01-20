@@ -1,0 +1,98 @@
+//* Day 2
+
+//  find the largest number
+const arFn = (...numbers) => {
+    let res = numbers.sort((a, b) => b - a)[0];
+    return res
+}
+
+console.log(arFn(5,54,65,25,3,34));
+
+
+
+// double the numbers
+const num = [2,5,8,10,20]
+let result = num.map(num => num * 2);
+console.log(result);
+
+
+
+// Even numbers
+function evenNumbers(num1) {
+    let result = num1.filter(num => num % 2 === 0);
+    return result;
+}
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+
+
+//* Day 3
+
+
+
+//  Write an object using an object literal to represent a book with properties: title, author, and a method read() that prints the title.
+const book = {
+    title: 'Harry Potter',
+    author: 'J.K. Rowling',
+    read: function() {
+        console.log(this.title);
+    }
+}
+book.read(); //  Harry Potter
+
+
+
+//  Create an object using the new keyword and add the properties name, age, and a method introduce() dynamically.
+const person = new Object();
+person.name = 'javid';
+person.age = 20;
+person.introduce = function() {
+    console.log(`Hi, my name is ${this.name} and I am ${this.age}`)
+}
+
+console.log(person);
+
+
+
+
+//  Write a constructor function called Car that takes brand and year as arguments and includes a method getAge() that calculates the car's age.
+function car(brand, year) {
+    this.brand = brand;
+    this.year = year;
+    this.getAge = function() {
+        return 2025 - this.year;
+        }
+}
+
+let car1 = new car('defender', 2021)
+
+console.log(car1);
+console.log(car1.getAge());
+
+
+
+
+// Using an object literal, create a user object with a method login(). Then rewrite the same object using an object constructor.
+const user = {
+    name: 'javid',
+    password: 1234,
+    login: function() {
+        console.log(`${this.name} is loged in!`);
+    }
+}
+
+user.login();
+
+
+
+function loged(name, password) {
+    this.name = name;
+    this.password = password;
+    this.login = function() {
+        console.log(`${this.name} is loged in!`);
+        }
+}
+
+let user1 = new loged('javid', 1234);
+user1.login()
