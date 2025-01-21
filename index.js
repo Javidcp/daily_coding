@@ -95,4 +95,64 @@ function loged(name, password) {
 }
 
 let user1 = new loged('javid', 1234);
-user1.login()
+user1.login();
+
+
+
+
+
+
+
+//* Day 4
+//  Prototype
+function animal(name)  {
+    this.name = name;
+}
+animal.prototype.eat = function () {
+    console.log(`${this.name} is eating!`);
+}
+let dog = new animal('dog');
+dog.eat();
+console.log(dog.hasOwnProperty("eat"));
+
+
+
+//  Closure
+function makeCounter() {
+    let count = 0;
+    return function () {
+        count++;
+        return count;
+    };
+}
+const counter1 = makeCounter();
+const counter2 = makeCounter();
+console.log(counter1());    // 1
+console.log(counter1());    // 2
+console.log(counter2());    // 1
+
+
+
+
+//  Local Storage
+let objLoc = {
+    name: 'javid',
+    age: 20
+}
+
+function store() {
+    localStorage.setItem(objLoc,'local')
+}
+
+
+
+// Higher Order Function
+function higherOrderFunction(a, b, callBack) {
+    return callBack(a, b);
+}
+
+const add = (num1, num2) => num1 + num2;
+const subtract = (num1, num2) => num1 - num2;
+
+console.log(higherOrderFunction(2, 4, add));
+console.log(higherOrderFunction(2, 4, subtract));
