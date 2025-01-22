@@ -156,3 +156,16 @@ const subtract = (num1, num2) => num1 - num2;
 
 console.log(higherOrderFunction(2, 4, add));
 console.log(higherOrderFunction(2, 4, subtract));
+
+
+
+
+
+//* Day 5
+
+function greeting(person, greet) {
+    console.log(`${greet} ${person}!`);
+}
+
+const morn = greeting.bind(null,'Alice','Hello')
+morn()
