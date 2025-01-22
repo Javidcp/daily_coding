@@ -163,9 +163,33 @@ console.log(higherOrderFunction(2, 4, subtract));
 
 //* Day 5
 
+
+
+//  Write a code where bind is used to create a new function that always greets "Alice" with "Hello".
 function greeting(person, greet) {
     console.log(`${greet} ${person}!`);
 }
 
 const morn = greeting.bind(null,'Alice','Hello')
-morn()
+morn();
+
+
+
+//  Remove duplicate elements from an array using a Set
+let arr = [1,2,3,1,4,5];
+
+let setArr = new Set(arr);
+console.log(setArr);
+
+
+
+
+//  A function is passed as an argument to another function
+function addition(a, b){
+    return a + b;
+}
+
+function sum (a, b, callBack){
+    return callBack(a, b);
+}
+console.log(sum(2, 4, addition));
