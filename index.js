@@ -171,6 +171,17 @@ const map = new Map([
 map.forEach((value, key) => console.log(`${key} : ${value}`))
 
 
+// Frequency checking
+const str = 'hello world';
+let checkFreq = new Map();
+
+for (let char of str) {
+    checkFreq.set(char,(checkFreq.get(char) || 0)+ 1)
+}
+console.log(checkFreq);
+
+
+
 //  Write a code where bind is used to create a new function that always greets "Alice" with "Hello".
 function greeting(person, greet) {
     console.log(`${greet} ${person}!`);
