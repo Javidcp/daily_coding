@@ -163,6 +163,12 @@ console.log(higherOrderFunction(2, 4, subtract));
 
 //* Day 5
 
+//  Iterate over all keys and values in a Map
+const map = new Map([
+    ['name','Jhon'],
+    ['age',30]
+])
+map.forEach((value, key) => console.log(`${key} : ${value}`))
 
 
 //  Write a code where bind is used to create a new function that always greets "Alice" with "Hello".
