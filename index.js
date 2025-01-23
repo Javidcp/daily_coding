@@ -210,3 +210,21 @@ function sum (a, b, callBack){
     return callBack(a, b);
 }
 console.log(sum(2, 4, addition));
+
+
+
+
+
+
+
+
+//* Day 6
+
+// Random number taking
+
+function randomNum (a, b) {
+    return Math.floor(Math.random() * (a - b + 1) + b);
+}
+console.log(randomNum(20,10))
+
+
