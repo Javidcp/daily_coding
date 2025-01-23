@@ -236,3 +236,13 @@ function factorial (num) {
     return num * factorial(num - 1)
 }
 console.log(factorial(5));
+
+
+
+// max find in random number
+const num1 = Math.floor(Math.random() * (1 * 10));
+const num2 = Math.floor(Math.random() * (1 * 10));
+const num3 = Math.floor(Math.random() * (1 * 10));
+console.log(`${num1} - ${num2} - ${num3}`);
+console.log(Math.max(num1,num2,num3));
+
