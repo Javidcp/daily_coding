@@ -246,3 +246,29 @@ const num3 = Math.floor(Math.random() * (1 * 10));
 console.log(`${num1} - ${num2} - ${num3}`);
 console.log(Math.max(num1,num2,num3));
 
+
+
+
+
+
+
+
+// Arrary destructuring 
+let language = ["HTML", "CSS", "JAVASCRIPT", "REACT", "MONGO-DB", "EXPRESS-JS", "NODE-JS"];
+
+let [html, css, js, react, ...backEnd] = language;
+
+console.log(html);
+console.log(js);
+console.log(backEnd);
+
+
+// Closure
+function outerFn () {
+    let a = 10;
+    function innerFn () {
+        console.log(a);
+    }
+    innerFn()
+}
+outerFn()
