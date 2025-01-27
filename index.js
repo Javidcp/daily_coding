@@ -272,3 +272,81 @@ function outerFn () {
     innerFn()
 }
 outerFn()
+
+
+
+// stack
+function first() {
+    console.log("first");
+    second();
+}
+
+function second() {
+    console.log("second");
+    third();
+}
+
+function third() {
+    console.log("third");
+}
+
+first()
+
+/* 
+
+FIRST fn pushed to stack
+SECOND fn is inside FIRST fn -> pushed to stack
+THIRD fn is inside SECOND fn -> pushed to stack
+THIRD fn is called -> popped from stack
+SECOND fn is called -> popped from stack
+FIRST fn is called -> popped from stack
+
+*/
+
+
+
+
+
+// Exception Handling
+
+console.log("Started");
+
+let ab, bc, res;
+
+try {
+    console.log("On Log");
+    
+    ab = firstInit();
+    bc = secondInit();
+    res = sumInit(ab, bc);
+}  finally {
+    console.log("On Finally");
+}
+
+console.log(res);
+
+
+console.log("Ended");
+
+
+function firstInit () {
+    console.log("first");
+    // fdtgw()
+    // throw 'Ente Swantham error'
+    // throw new Error ('error vannu')
+    return 10;
+}
+
+function secondInit () {
+    console.log("second");
+    
+    return 15;
+}
+
+function sumInit (ab, bc) {
+    return ab + bc;
+}
+
+
+
+
