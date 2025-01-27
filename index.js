@@ -350,3 +350,26 @@ function sumInit (ab, bc) {
 
 
 
+// Hoisting
+
+console.log(a);
+let a = 10;
+
+console.log(b);
+var b = 10;
+
+
+
+mainFn();
+
+function mainFn() {
+    console.log("hey");
+}
+
+
+errorFn();
+
+const errorFn = function() {
+    console.log("hello");
+    
+}
