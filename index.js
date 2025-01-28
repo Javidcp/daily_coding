@@ -352,8 +352,8 @@ function sumInit (ab, bc) {
 
 // Hoisting
 
-console.log(a);
-let a = 10;
+// console.log(a);
+// let a = 10;
 
 console.log(b);
 var b = 10;
@@ -367,9 +367,53 @@ function mainFn() {
 }
 
 
-errorFn();
+// errorFn();
 
-const errorFn = function() {
-    console.log("hello");
+// const errorFn = function() {
+//     console.log("hello");
     
+// }
+
+
+
+
+
+// Adv Day 3
+
+// shadowing
+let x = 10;
+
+{
+    let x = 20;
+    console.log(x);
 }
+
+console.log(x);
+
+
+// illegal shadowing
+// let r = 10;
+// {
+//     var r = 20;
+//     console.log(r);
+// }
+// console.log(r);
+
+
+
+
+// coercion
+
+let assest = 10;
+const resu = String(assest);
+console.log(resu, typeof resu);
+
+
+let boo = 3;
+const bool = Boolean(boo)
+console.log(bool, typeof bool);
+
+
+let tru = true;
+const non = Number(tru);
+console.log(non, typeof non);
