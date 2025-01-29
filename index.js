@@ -417,3 +417,93 @@ console.log(bool, typeof bool);
 let tru = true;
 const non = Number(tru);
 console.log(non, typeof non);
+
+
+
+
+//Adv 4 
+
+//  class
+
+class Students {
+    constructor (name, year) {
+        this.name = name;
+        this.year = year;
+    }
+
+    // this Static function method another way is down
+    static primitive (...arg) {
+        let arr = arg.map(item => item.year);
+        console.log(Math.min(...arr));
+    }
+
+    getName() {
+        return this.name;
+    };
+
+    getAge() {
+        return new Date().getFullYear() - this.year;
+    };
+};
+
+let student1 = new Students('Javid',2004);
+let student2 = new Students('Fazil',2005);
+let student3 = new Students('Abdu',2003);
+
+console.log(student1.getAge());
+console.log(student2);
+
+Students.primitive(student1, student2, student3)
+
+
+
+
+// Shallow copy
+const original = { name: "Alice", age: 26};
+const shallowCopy = original;
+shallowCopy.age = 20
+
+console.log(original); // Output: 30 (because they share the same reference)
+console.log(shallowCopy);
+
+
+// Deep copy
+
+const original1 = { name: "Cook", age: 25, skill: {primary: "full-stack"}};
+const deepCopy = {...original1};
+deepCopy.age = 35;
+
+console.log(original1);
+console.log(deepCopy);
+
+
+
+
+// Memoization
+
+function findSum(...val) {
+    return val.reduce((total, curr) => total + curr);
+}
+const memo = (addition) => {
+    const cache = {};  // Stores computed results
+    return function (...arg) {
+        const key = JSON.stringify(arg); // Convert array to a unique string key
+        if (cache[key]) {  // Check if result is already cached
+            console.log(cache);
+            console.log("return result");
+            return cache[key]; // Return cached result
+        } else {
+            console.log("continue execution");
+            const result = addition(...arg); // Compute new result
+            cache[key] = result;  // Store result in cache
+            return result;
+        }
+    }
+}
+
+
+const calculate = memo(findSum);
+
+console.log(calculate(4, 5));
+console.log(calculate(4, 5));
+console.log(calculate(4, 5));
