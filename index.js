@@ -507,3 +507,69 @@ const calculate = memo(findSum);
 console.log(calculate(4, 5));
 console.log(calculate(4, 5));
 console.log(calculate(4, 5));
+
+
+
+
+// Adv Day 6
+
+// Promise
+
+const fetchData = () => {
+    return new Promise ((resolve, reject) => {
+        console.log("Fetching loading...");
+
+        setTimeout (() => {
+            let success = Math.random() > 0.3;
+
+            if (success) {
+                resolve("Fetching data successful")
+            } else {
+                reject("Fetching data is failed")
+            }
+        }, 2000)
+    })
+}
+
+
+fetchData()
+    .then((data) => {
+        console.log("Success:", data);
+    })
+    .catch((error) => {
+        console.log("Failed:", error);
+    })
+    .finally(() => {
+        console.log("Request completed");
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+    const delayedMessage = (msg, delay) => {
+        return new Promise ((resolve, reject) => {
+            setTimeout (() => {
+                resolve(msg)
+            }, delay)
+        })
+    }
+    
+    const fetchingData = async () => {
+        try {
+            const result = await delayedMessage("Hello world!", 2000)
+            console.log(result);
+            
+        } catch(error) {
+            console.log(error);
+        }
+    }
+    
+    fetchingData()
